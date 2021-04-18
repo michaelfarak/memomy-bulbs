@@ -1,0 +1,58 @@
+.main-container {
+  display: flex;
+  /*height: calc(100% - 64px);*/
+}
+
+.score-history-container {
+  flex: 1;
+  border-right: 1px solid black;
+  height: 100%;
+  min-width: 120px;
+}
+
+.score-title {
+  text-align: center;
+  font-size: large;
+  font-weight: 500;
+}
+.right-container {
+  flex: 3;
+  height: 100%;
+  text-align: center;
+}
+
+.game-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 17rem;
+  margin: 50px auto;
+  justify-items: center;
+}
+
+.bulb {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  cursor: pointer;
+  margin: 12px;
+  border-radius: 50%;
+}
+
+.bulb1 {
+  background-color: cadetblue;
+}
+.bulb2 {
+  background-color: coral;
+}
+.bulb3 {
+  background-color: darksalmon;
+}
+.bulb4 {
+  background-color: palegreen;
+}
+.bulb5 {
+  background-color: violet;
+}
+.bulb6 {
+  background-color: orange;
+}

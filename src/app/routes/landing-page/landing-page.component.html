@@ -1,0 +1,10 @@
+<div class="landing-page">
+  <h1 class="title">Welcome to memory bulbs game !</h1>
+  <h3>Some information first</h3>
+  <mat-form-field [formGroup]="form">
+    <input matInput placeholder="Your name" formControlName="name">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="save()" [routerLink]="['/game']">Submit</button>
+</div>
+

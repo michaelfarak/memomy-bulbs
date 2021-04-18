@@ -1,0 +1,36 @@
+
+
+<div class="main-container">
+
+  <div class="score-history-container">
+    <h3 class="score-title">Score history</h3>
+
+    <div *ngIf="scoreHistory">
+      <ul class="scores" *ngFor="let score of scoreHistory | sort: 'score'">
+        <li>Name: {{score.userName}}</li>
+        <li>Score: {{score.score}}</li>
+        <li>Date: {{score.date}}</li>
+        <li>Time: {{score.time | date: 'shortTime'}}</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="right-container">
+    <h1>Welcome {{userInfo.name}}!</h1>
+    <h1>Select bulbs in the right order</h1>
+
+    <button mat-raised-button color="primary" (click)="startSequence()" [disabled]="gameStarted || gameFinished">start game</button>
+
+    <div #gameContainer class="game-container">
+      <div *ngFor="let bulb of [].constructor(bulbNumber); let i = index" id="bulb{{i+1}}" class="bulb"
+           (click)="gameStarted && !gameFinished ? clickBulb($event, 'bulb'+(i+1)) : ''"></div>
+    </div>
+
+    <p class="total-score">Total score: {{totalPoint}}</p>
+
+    <button mat-raised-button color="warn" *ngIf="gameFinished" (click)="restartGame()">Restart game</button>
+
+  </div>
+
+</div>
